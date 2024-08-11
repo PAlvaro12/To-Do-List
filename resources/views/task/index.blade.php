@@ -21,12 +21,14 @@
         <td>Nombre de la tarea </td>
         <td>Acción </td>
     </tr>
+    
+@foreach($tasks as $task)
 
     <tr>
-        <td> Hacer una aplicación en laravel </td>
+        <td> {{ $task->task }}</td>
         <td> X </td>
     </tr>
-
+@endforeach
 
 
 
