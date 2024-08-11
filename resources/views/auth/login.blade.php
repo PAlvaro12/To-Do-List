@@ -57,12 +57,10 @@
                                 </div>
 
                                 <div class="d-flex align-items-center justify-content-center pb-4">
-                                    <p class="mb-0 me-2">no tienes cuenta ?</p>
+                                    <p class="mb-0 me-2">no tienes cuenta?</p>
                                     <a href="{{route('register')}}" class="btn btn-outline-danger">Crear cuenta</a>
                                 </div>
-
                             </form>
-
                         </div>
                         </div>
                         <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
