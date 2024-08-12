@@ -27,7 +27,7 @@ Route::get('/',[TaskController::class,'index']);
 
 Route::post('/',[TaskController::class,'store']);
 
-
+Route::delete('/{id}',[TaskController::class,'destroy'])->name('task.destroy');
 
 /*
 Auth::routes();
