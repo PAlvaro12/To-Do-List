@@ -21,6 +21,19 @@
     <body>
         <header>
             <!-- place navbar here -->
+            @if (Route::has('login'))
+                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                    @auth
+                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
+                    @else
+                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
         </header>
         <main class="container">
             <br/>
@@ -37,7 +50,7 @@
                     <br/>
                     <br/>
                     <div
-                        class="table-responsive-sm"
+                        class="tabla-responsive-sm table-bordered table-striped"
                     >
                         <table
                             class="table table"
@@ -56,7 +69,7 @@
                                         <form action="{{ route('task.destroy', $task->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                            <input type="submit" value="X">
+                                            <input type="submit" class="btn btn-danger" value="(X) Realizada">
                                         </form>
                                     </td>
                                     <td>{{ $task->task }}</td>
